@@ -4,6 +4,7 @@
 
 USERID=$(id -u)
 
+
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -45,7 +46,8 @@ VALIDATE $? "Enabling MySQL Server"
 systemctl start mysqld &>>$LOG_FILE_NAME
 VALIDATE $? "Starting MySQL Server"
 
-mysql -h $IP -u root -pExpenseApp@1  # check whether DB connetion is present
+IP=$1 # assign IP address
+mysql -h $1 -u root -pExpenseApp@1  # check whether DB connetion is present
 
 if [ $? -ne 0 ]
 then
