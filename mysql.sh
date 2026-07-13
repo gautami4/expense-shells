@@ -47,7 +47,7 @@ systemctl start mysqld &>>$LOG_FILE_NAME
 VALIDATE $? "Starting MySQL Server"
 
 IP=$1 # assign IP address
-mysql -h $1 -u root -pExpenseApp@1  # check whether DB connetion is present
+mysql -h $1 -u root -pExpenseApp@1 -e 'show databases;' &>>$LOG_FILE_NAME # check whether DB connetion is present
 
 if [ $? -ne 0 ]
 then
