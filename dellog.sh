@@ -42,4 +42,4 @@ while read -r file
     echo "deleting file : $file "
     rm -rf $file
 do
-done <<< FILES_TO_DEL
+done <<< $FILES_TO_DEL
