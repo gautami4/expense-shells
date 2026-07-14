@@ -39,7 +39,7 @@ echo "files to be deleted : $FILES_TO_DEL" &>>$LOG_FILE_NAME
 
 #while loop
 while read -r file
+do
     echo "deleting file : $file "
     rm -rf $file
-do
 done <<< $FILES_TO_DEL
